@@ -190,10 +190,34 @@ body {
     60% { transform: translateY(-5px) rotate(45deg); }
 }
 
+/* Section Images */
+.section-image {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+
+.section-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
 /* Section 2: Problem */
 .section-2 {
     background: linear-gradient(135deg, #ff4757 0%, #c44569 100%);
     color: white;
+}
+
+.section-2 .section-img {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -319,6 +343,12 @@ body {
     color: #2c3e50;
 }
 
+.section-5 .section-img {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
 .method-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -364,6 +394,12 @@ body {
 .section-6 {
     background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
     color: white;
+}
+
+.section-6 .section-img {
+    max-width: 450px;
+    margin: 0 auto;
+    opacity: 0.9;
 }
 
 .main-result {
@@ -432,6 +468,12 @@ body {
 .section-7 {
     background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
     color: #2c3e50;
+}
+
+.section-7 .section-img {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
 }
 
 .testimonials-grid {
@@ -579,11 +621,32 @@ body {
     }
 }
 
+/* Animation for random fade */
+.random-fade {
+    animation: randomFade 1s ease-out;
+}
+
+@keyframes randomFade {
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px) rotate(5deg);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navigation-dots {
         right: 15px;
         gap: 10px;
+    }
+    
+    .section-img {
+        max-width: 90% !important;
+        margin: 0 auto;
     }
     
     .nav-dot {
