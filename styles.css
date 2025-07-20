@@ -368,35 +368,107 @@ body {
 
 /* Section 4: Turning Point */
 .section-4 {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: white;
+    padding: 80px 20px;
 }
 
-.turning-items {
+.turning-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.turning-subtitle {
+    font-size: 1.3rem;
+    color: #bdc3c7;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.success-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    gap: 30px;
+    margin: 60px 0;
 }
 
-.turning-item {
+.metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
     text-align: center;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-.turning-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #f39c12;
+.metric-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.turning-item p {
-    font-size: 1.1rem;
-    line-height: 1.5;
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: #bdc3c7;
+    font-weight: 300;
+}
+
+.success-process {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.step-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.step-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.step-content p {
+    font-size: 1rem;
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.process-arrow {
+    font-size: 1.5rem;
+    color: #3498db;
+    font-weight: bold;
+    flex-shrink: 0;
 }
 
 /* Section 5: Method */
