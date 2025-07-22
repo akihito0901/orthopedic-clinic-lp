@@ -394,15 +394,24 @@ body {
 /* Mobile Styles */
 @media (max-width: 480px) {
     .section {
+        height: auto;
         min-height: 100vh;
-        padding: 30px 15px;
+        padding: 40px 20px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 60px;
     }
     
     .container {
         padding: 0 10px;
+        margin-top: 0;
     }
     
     .hero-title {
@@ -412,8 +421,9 @@ body {
     }
     
     .section-title {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
     }
     
     .hero-subtitle,
@@ -476,12 +486,12 @@ body {
     
     .success-stats {
         grid-template-columns: 1fr;
-        gap: 12px;
-        margin: 25px 0;
+        gap: 8px;
+        margin: 15px 0;
     }
     
     .success-stat-item {
-        padding: 18px 12px;
+        padding: 15px 10px;
     }
     
     .success-number {
@@ -528,9 +538,9 @@ body {
     .method-item {
         flex-direction: column;
         text-align: center;
-        padding: 18px 12px;
-        gap: 12px;
-        margin: 15px 0;
+        padding: 15px 10px;
+        gap: 8px;
+        margin: 10px 0;
     }
     
     .method-content h3 {
