@@ -409,6 +409,17 @@ body {
         margin-top: 60px;
     }
     
+    .section-1 .container {
+        margin-top: 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+    
     .container {
         padding: 0 10px;
         margin-top: 0;
