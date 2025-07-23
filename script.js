@@ -1,6 +1,6 @@
 // Global Variables
 let currentSection = 0;
-const totalSections = 8;
+const totalSections = 7;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -220,6 +220,9 @@ function triggerSectionAnimations(sectionIndex) {
     
     // Add specific animations based on section
     switch (sectionIndex) {
+        case 0: // Hero section
+            triggerHeroAnimation(section);
+            break;
         case 1: // Problem section
             triggerStatsAnimation(section);
             break;
@@ -238,6 +241,21 @@ function triggerSectionAnimations(sectionIndex) {
         case 6: // Testimonials section
             triggerTestimonialsAnimation(section);
             break;
+    }
+}
+
+function triggerHeroAnimation(section) {
+    const heroTitle = section.querySelector('.hero-title');
+    const heroSubtitle = section.querySelector('.hero-subtitle');
+    
+    if (heroTitle) {
+        heroTitle.style.animation = 'fadeInUp 1.2s ease-out forwards';
+    }
+    
+    if (heroSubtitle) {
+        setTimeout(() => {
+            heroSubtitle.style.animation = 'fadeInUp 0.8s ease-out forwards';
+        }, 300);
     }
 }
 
