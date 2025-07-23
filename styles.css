@@ -85,6 +85,17 @@ body {
     padding-bottom: 15vh;
 }
 
+.section {
+    align-items: flex-start;
+    padding-top: 10vh;
+}
+
+.section-1 {
+    align-items: flex-end;
+    padding-bottom: 15vh;
+    padding-top: 0;
+}
+
 .container {
     max-width: 800px;
     width: 100%;
