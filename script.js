@@ -1,6 +1,6 @@
 // Global Variables
 let currentSection = 0;
-const totalSections = 9;
+const totalSections = 8;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
