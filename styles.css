@@ -497,6 +497,14 @@ body {
     font-weight: 600;
 }
 
+.support-text {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
 /* Video Image */
 .video-image {
     margin: 30px 0;
