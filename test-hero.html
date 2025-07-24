@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Animation Test</title>
+    <style>
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-subtitle {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="hero-title">
+            集客の勉強、いつまで<br>続けるんですか？
+        </h1>
+        <p class="hero-subtitle">勉強している間にも、お客様は<br>他の院に行ってしまいます。</p>
+    </div>
+    
+    <script>
+        function triggerHeroAnimation() {
+            const heroTitle = document.querySelector('.hero-title');
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            
+            if (heroTitle) {
+                heroTitle.style.animation = 'fadeInUp 1.2s ease-out forwards';
+            }
+            
+            if (heroSubtitle) {
+                setTimeout(() => {
+                    heroSubtitle.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }, 300);
+            }
+        }
+        
+        // Trigger animation after page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                triggerHeroAnimation();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

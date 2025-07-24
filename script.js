@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProgressBar();
     initializeTypingEffect();
     initializeCountUpAnimations();
+    
+    // Trigger hero animation on page load
+    setTimeout(() => {
+        const heroSection = document.querySelector('.section-1');
+        if (heroSection) {
+            triggerHeroAnimation(heroSection);
+        }
+    }, 100);
 });
 
 // Section Scrolling
@@ -245,15 +253,25 @@ function triggerSectionAnimations(sectionIndex) {
 }
 
 function triggerHeroAnimation(section) {
+    if (!section) return;
+    
     const heroTitle = section.querySelector('.hero-title');
     const heroSubtitle = section.querySelector('.hero-subtitle');
     
     if (heroTitle) {
+        // Add animate class and apply animation
+        heroTitle.classList.add('animate');
+        heroTitle.style.animation = 'none';
+        heroTitle.offsetHeight; // Trigger reflow
         heroTitle.style.animation = 'fadeInUp 1.2s ease-out forwards';
     }
     
     if (heroSubtitle) {
         setTimeout(() => {
+            // Add animate class and apply animation
+            heroSubtitle.classList.add('animate');
+            heroSubtitle.style.animation = 'none';
+            heroSubtitle.offsetHeight; // Trigger reflow
             heroSubtitle.style.animation = 'fadeInUp 0.8s ease-out forwards';
         }, 300);
     }
@@ -269,62 +287,78 @@ function triggerStatsAnimation(section) {
 }
 
 function triggerStoryAnimation(section) {
-    const storyItems = section.querySelectorAll('.story-item');
-    storyItems.forEach((item, index) => {
+    // Section 3 - Success story animation
+    const successImage = section.querySelector('.success-image');
+    const solutionText = section.querySelector('.solution-text');
+    
+    if (successImage) {
+        successImage.style.animation = 'zoomIn 1s ease-out forwards';
+    }
+    if (solutionText) {
         setTimeout(() => {
-            item.style.animation = `fadeIn 0.8s ease-out forwards`;
-        }, index * 300);
-    });
+            solutionText.style.animation = 'fadeIn 0.8s ease-out forwards';
+        }, 300);
+    }
 }
 
 function triggerTurningAnimation(section) {
-    const turningItems = section.querySelectorAll('.turning-item');
-    turningItems.forEach((item, index) => {
+    // Section 4 - Strategy grid animation
+    const strategyGrid = section.querySelector('.strategy-grid');
+    const strategyItems = section.querySelectorAll('.strategy-item');
+    
+    if (strategyGrid) {
+        strategyGrid.style.animation = 'slideUp 0.8s ease-out forwards';
+    }
+    strategyItems.forEach((item, index) => {
         setTimeout(() => {
-            item.style.animation = `zoomIn 0.8s ease-out forwards`;
+            item.style.animation = 'fadeIn 0.6s ease-out forwards';
         }, index * 200);
     });
 }
 
 function triggerMethodAnimation(section) {
-    const methodCards = section.querySelectorAll('.method-card');
-    methodCards.forEach((card, index) => {
+    // Section 5 - Video support animation
+    const videoImage = section.querySelector('.video-image');
+    const videoPoints = section.querySelector('.video-points');
+    
+    if (videoImage) {
+        videoImage.style.animation = 'zoomIn 0.8s ease-out forwards';
+    }
+    if (videoPoints) {
         setTimeout(() => {
-            card.style.animation = `slideUp 0.8s ease-out forwards`;
-        }, index * 200);
-    });
+            videoPoints.style.animation = 'slideUp 0.6s ease-out forwards';
+        }, 300);
+    }
 }
 
 function triggerResultsAnimation(section) {
-    const mainResult = section.querySelector('.result-number');
-    const subResults = section.querySelectorAll('.sub-number');
+    // Section 6 - Final support animation
+    const videoPoints = section.querySelector('.video-points');
+    const sectionTitle = section.querySelector('.section-title');
     
-    if (mainResult) {
-        animateCountUp(mainResult);
+    if (videoPoints) {
+        videoPoints.style.animation = 'slideUp 0.8s ease-out forwards';
     }
-    
-    subResults.forEach((result, index) => {
+    if (sectionTitle) {
         setTimeout(() => {
-            animateCountUp(result);
-        }, 500 + (index * 200));
-    });
+            sectionTitle.style.animation = 'fadeIn 0.6s ease-out forwards';
+        }, 300);
+    }
 }
 
 function triggerTestimonialsAnimation(section) {
-    const testimonialCards = section.querySelectorAll('.testimonial-card');
-    testimonialCards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.animation = `fadeIn 0.8s ease-out forwards`;
-        }, index * 300);
-    });
+    // Section 7 - Final CTA animation
+    const benefits = section.querySelector('.benefits');
+    const lineButton = section.querySelector('.line-button');
     
-    // Animate stars
-    const stars = section.querySelectorAll('.star');
-    stars.forEach((star, index) => {
+    if (benefits) {
+        benefits.style.animation = 'fadeIn 0.8s ease-out forwards';
+    }
+    if (lineButton) {
         setTimeout(() => {
-            star.style.animation = `twinkle 1s infinite alternate`;
-        }, index * 100);
-    });
+            lineButton.style.animation = 'slideUp 0.6s ease-out forwards';
+        }, 300);
+    }
 }
 
 // Intersection Observer for section detection
@@ -341,6 +375,9 @@ function initializeSectionObserver() {
                     currentSection = sectionIndex;
                     updateNavigationDots();
                     updateProgressBar();
+                    
+                    // Trigger animations for the current section
+                    triggerSectionAnimations(sectionIndex);
                 }
             }
         });
@@ -412,6 +449,12 @@ style.textContent = `
         opacity: 0;
         animation: fadeIn 0.8s ease-out forwards;
         animation-play-state: paused;
+    }
+    
+    /* Ensure hero elements can be animated */
+    .hero-title.animate,
+    .hero-subtitle.animate {
+        animation-play-state: running !important;
     }
     
     .zoom-in {
