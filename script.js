@@ -234,10 +234,13 @@ function initializeAnimations() {
         });
     }, observerOptions);
     
-    // Observe all animated elements
+    // Observe all animated elements (exclude typing elements)
     const animatedElements = document.querySelectorAll('.slide-in-left, .fade-in, .zoom-in, .slide-up, .random-fade');
     animatedElements.forEach(element => {
-        observer.observe(element);
+        // Skip typing elements
+        if (!element.classList.contains('typing-text') && !element.classList.contains('typing-text-2')) {
+            observer.observe(element);
+        }
     });
 }
 
@@ -247,8 +250,8 @@ function triggerSectionAnimations(sectionIndex) {
     
     // Add specific animations based on section
     switch (sectionIndex) {
-        case 0: // Hero section
-            triggerHeroAnimation(section);
+        case 0: // Hero section - use typing effect instead
+            // triggerHeroAnimation(section); // Disabled for typing effect
             break;
         case 1: // Problem section
             triggerStatsAnimation(section);
