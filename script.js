@@ -11,13 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTypingEffect();
     initializeCountUpAnimations();
     
-    // Trigger hero animation on page load
-    setTimeout(() => {
-        const heroSection = document.querySelector('.section-1');
-        if (heroSection) {
-            triggerHeroAnimation(heroSection);
-        }
-    }, 100);
+    // Don't trigger fadeIn hero animation, use typing effect instead
 });
 
 // Section Scrolling
@@ -147,6 +141,7 @@ function updateProgressBar() {
 // Typing Effect
 function initializeTypingEffect() {
     const typingText = document.querySelector('.typing-text');
+    const typingText2 = document.querySelector('.typing-text-2');
     
     if (typingText) {
         const text = typingText.textContent;
@@ -157,7 +152,23 @@ function initializeTypingEffect() {
             if (i < text.length) {
                 typingText.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 50);
+                setTimeout(typeWriter, 80);
+            } else if (typingText2) {
+                // Start second typing effect after first completes
+                setTimeout(() => {
+                    const text2 = typingText2.textContent;
+                    typingText2.textContent = '';
+                    
+                    let j = 0;
+                    function typeWriter2() {
+                        if (j < text2.length) {
+                            typingText2.textContent += text2.charAt(j);
+                            j++;
+                            setTimeout(typeWriter2, 60);
+                        }
+                    }
+                    typeWriter2();
+                }, 300);
             }
         }
         
@@ -189,13 +200,16 @@ function animateCountUp(element) {
     const increment = target / (duration / 16);
     let current = 0;
     
+    // Check if element should display percentage
+    const isPercentage = element.classList.contains('stat-number') || element.textContent.includes('%');
+    
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = target.toLocaleString();
+            element.textContent = target.toLocaleString() + (isPercentage ? '%' : '');
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current).toLocaleString();
+            element.textContent = Math.floor(current).toLocaleString() + (isPercentage ? '%' : '');
         }
     }, 16);
 }

@@ -168,13 +168,12 @@ body {
     font-weight: 900;
     margin-bottom: 20px;
     line-height: 1.2;
-    opacity: 0 !important;
-    transform: translateY(30px) !important;
 }
 
 .hero-subtitle {
-    opacity: 0 !important;
-    transform: translateY(30px) !important;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 .section-title {
