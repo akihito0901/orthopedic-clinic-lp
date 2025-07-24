@@ -1,6 +1,6 @@
 // Global Variables
 let currentSection = 0;
-const totalSections = 7;
+const totalSections = 8;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -251,16 +251,19 @@ function triggerSectionAnimations(sectionIndex) {
         case 2: // Empathy section
             triggerStoryAnimation(section);
             break;
-        case 3: // Turning point section
+        case 3: // Results highlight section
+            triggerResultsHighlightAnimation(section);
+            break;
+        case 4: // Turning point section
             triggerTurningAnimation(section);
             break;
-        case 4: // Method section
+        case 5: // Method section
             triggerMethodAnimation(section);
             break;
-        case 5: // Results section
+        case 6: // Results section
             triggerResultsAnimation(section);
             break;
-        case 6: // Testimonials section
+        case 7: // Testimonials section
             triggerTestimonialsAnimation(section);
             break;
     }
@@ -312,6 +315,33 @@ function triggerStoryAnimation(section) {
         setTimeout(() => {
             solutionText.style.animation = 'fadeIn 0.8s ease-out forwards';
         }, 300);
+    }
+}
+
+function triggerResultsHighlightAnimation(section) {
+    // Section 3.5 - Results highlight animation
+    const resultsStats = section.querySelector('.results-stats');
+    const resultNumbers = section.querySelectorAll('.result-number');
+    const resultText = section.querySelector('.result-text');
+    
+    if (resultsStats) {
+        resultsStats.style.animation = 'slideUp 0.8s ease-out forwards';
+    }
+    
+    resultNumbers.forEach((number, index) => {
+        setTimeout(() => {
+            if (number.dataset.count) {
+                animateCountUp(number);
+            } else {
+                number.style.animation = 'fadeIn 0.6s ease-out forwards';
+            }
+        }, 300 + (index * 200));
+    });
+    
+    if (resultText) {
+        setTimeout(() => {
+            resultText.style.animation = 'fadeIn 0.8s ease-out forwards';
+        }, 800);
     }
 }
 
