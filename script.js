@@ -1,6 +1,6 @@
 // Global Variables
 let currentSection = 0;
-const totalSections = 8;
+const totalSections = 9;
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -158,6 +158,7 @@ function initializeTypingEffect() {
                 setTimeout(() => {
                     const text2 = typingText2.textContent;
                     typingText2.textContent = '';
+                    typingText2.style.opacity = '1'; // Make visible before typing
                     
                     let j = 0;
                     function typeWriter2() {
@@ -263,7 +264,10 @@ function triggerSectionAnimations(sectionIndex) {
         case 6: // Results section
             triggerResultsAnimation(section);
             break;
-        case 7: // Testimonials section
+        case 7: // Support section
+            triggerResultsAnimation(section);
+            break;
+        case 8: // Testimonials section
             triggerTestimonialsAnimation(section);
             break;
     }

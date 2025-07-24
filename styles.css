@@ -170,6 +170,10 @@ body {
     line-height: 1.4;
 }
 
+.typing-text-2 {
+    opacity: 0;
+}
+
 .section-title {
     font-size: 1.8rem;
     font-weight: 700;
