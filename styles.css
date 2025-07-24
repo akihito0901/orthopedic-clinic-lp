@@ -171,7 +171,11 @@ body {
 }
 
 .typing-text-2 {
-    opacity: 0;
+    opacity: 0 !important;
+}
+
+.hero-subtitle.typing-text-2 {
+    opacity: 0 !important;
 }
 
 .section-title {

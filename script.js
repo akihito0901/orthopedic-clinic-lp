@@ -140,8 +140,12 @@ function updateProgressBar() {
 
 // Typing Effect
 function initializeTypingEffect() {
+    console.log('Initializing typing effect...');
     const typingText = document.querySelector('.typing-text');
     const typingText2 = document.querySelector('.typing-text-2');
+    
+    console.log('Found typing text:', typingText);
+    console.log('Found typing text 2:', typingText2);
     
     if (typingText) {
         const text = typingText.textContent;
