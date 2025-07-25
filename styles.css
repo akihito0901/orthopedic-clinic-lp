@@ -297,6 +297,11 @@ body {
     font-weight: 600;
 }
 
+.warning-text p.large-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 .danger-text {
     font-size: 1.4rem;
     font-weight: 700;
