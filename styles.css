@@ -408,13 +408,14 @@ body {
 }
 
 .anxiety-photo {
-    width: 100%;
-    max-width: 350px;
+    width: 100vw;
+    max-width: none;
     height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    box-shadow: none;
     margin: 0 auto;
     display: block;
+    margin-left: calc(-50vw + 50%);
 }
 
 /* Success Stats */
