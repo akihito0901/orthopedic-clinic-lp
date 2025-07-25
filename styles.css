@@ -255,9 +255,53 @@ body {
     color: #2c3e50;
 }
 
+.section-3 {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.section-4 {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+}
+
+.section-5 {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+}
+
+.section-6 {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+}
+
 .section-7 {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    color: #2c3e50;
+}
+
+.section-8 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+}
+
+/* Warning Content */
+.warning-content {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.warning-text p {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.danger-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f1c40f;
+    margin-top: 30px;
 }
 
 /* Stats */
