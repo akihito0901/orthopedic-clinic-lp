@@ -191,7 +191,7 @@ function initializeTypingEffect() {
             }
         }
         
-        setTimeout(typeWriter, 100);
+        typeWriter();
     }
 }
 
