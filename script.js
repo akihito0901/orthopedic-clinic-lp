@@ -154,8 +154,22 @@ function initializeTypingEffect() {
         let i = 0;
         function typeWriter() {
             if (i < text.length) {
-                typingText.innerHTML += text.charAt(i);
-                i++;
+                // Check if we're at a < character (start of HTML tag)
+                if (text.charAt(i) === '<') {
+                    // Find the end of the tag
+                    let tagEnd = text.indexOf('>', i);
+                    if (tagEnd !== -1) {
+                        // Add the entire tag at once
+                        typingText.innerHTML += text.substring(i, tagEnd + 1);
+                        i = tagEnd + 1;
+                    } else {
+                        typingText.innerHTML += text.charAt(i);
+                        i++;
+                    }
+                } else {
+                    typingText.innerHTML += text.charAt(i);
+                    i++;
+                }
                 setTimeout(typeWriter, 80);
             } else if (typingText2) {
                 // Start second typing effect after first completes
