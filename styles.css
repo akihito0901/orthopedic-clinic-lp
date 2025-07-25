@@ -413,9 +413,11 @@ body {
     height: auto;
     border-radius: 0;
     box-shadow: none;
-    margin: 0 auto;
+    margin: 0;
     display: block;
-    margin-left: calc(-50vw + 50%);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Success Stats */
