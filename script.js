@@ -148,26 +148,26 @@ function initializeTypingEffect() {
     console.log('Found typing text 2:', typingText2);
     
     if (typingText) {
-        const text = typingText.textContent;
-        typingText.textContent = '';
+        const text = typingText.innerHTML;
+        typingText.innerHTML = '';
         
         let i = 0;
         function typeWriter() {
             if (i < text.length) {
-                typingText.textContent += text.charAt(i);
+                typingText.innerHTML += text.charAt(i);
                 i++;
                 setTimeout(typeWriter, 80);
             } else if (typingText2) {
                 // Start second typing effect after first completes
                 setTimeout(() => {
-                    const text2 = typingText2.textContent;
-                    typingText2.textContent = '';
+                    const text2 = typingText2.innerHTML;
+                    typingText2.innerHTML = '';
                     typingText2.style.opacity = '1'; // Make visible before typing
                     
                     let j = 0;
                     function typeWriter2() {
                         if (j < text2.length) {
-                            typingText2.textContent += text2.charAt(j);
+                            typingText2.innerHTML += text2.charAt(j);
                             j++;
                             setTimeout(typeWriter2, 60);
                         }
