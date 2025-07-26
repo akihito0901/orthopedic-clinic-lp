@@ -600,12 +600,12 @@ body {
 }
 
 .success-video {
-    flex: 2;
+    flex: 1;
 }
 
 .success-video video {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     height: 250px;
     object-fit: cover;
     border-radius: 15px;
