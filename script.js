@@ -171,7 +171,7 @@ function initializeTypingEffect() {
                     typingText.innerHTML += text.charAt(i);
                     i++;
                 }
-                setTimeout(typeWriter, 30);
+                setTimeout(typeWriter, 50);
             } else if (typingText2) {
                 // Start second typing effect after first completes
                 setTimeout(() => {
@@ -184,7 +184,7 @@ function initializeTypingEffect() {
                         if (j < text2.length) {
                             typingText2.innerHTML += text2.charAt(j);
                             j++;
-                            setTimeout(typeWriter2, 25);
+                            setTimeout(typeWriter2, 40);
                         }
                     }
                     typeWriter2();
