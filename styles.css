@@ -605,7 +605,7 @@ body {
 
 .success-video video {
     width: 100%;
-    max-width: 500px;
+    max-width: 250px;
     height: 250px;
     object-fit: cover;
     border-radius: 15px;
