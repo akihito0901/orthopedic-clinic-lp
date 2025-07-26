@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProgressBar();
     initializeTypingEffect();
     initializeCountUpAnimations();
+    initializeVideoPlayback();
     
     // Don't trigger fadeIn hero animation, use typing effect instead
 });
@@ -170,7 +171,7 @@ function initializeTypingEffect() {
                     typingText.innerHTML += text.charAt(i);
                     i++;
                 }
-                setTimeout(typeWriter, 80);
+                setTimeout(typeWriter, 30);
             } else if (typingText2) {
                 // Start second typing effect after first completes
                 setTimeout(() => {
@@ -183,16 +184,39 @@ function initializeTypingEffect() {
                         if (j < text2.length) {
                             typingText2.innerHTML += text2.charAt(j);
                             j++;
-                            setTimeout(typeWriter2, 60);
+                            setTimeout(typeWriter2, 25);
                         }
                     }
                     typeWriter2();
-                }, 300);
+                }, 100);
             }
         }
         
         typeWriter();
     }
+}
+
+// Video Playback Initialization
+function initializeVideoPlayback() {
+    const videos = document.querySelectorAll('.bg-video');
+    videos.forEach(video => {
+        video.addEventListener('loadeddata', () => {
+            video.play().catch(e => {
+                console.log('Video autoplay prevented:', e);
+            });
+        });
+        
+        // Ensure loop continues
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            video.play();
+        });
+        
+        // Force play attempt
+        video.play().catch(e => {
+            console.log('Video autoplay prevented:', e);
+        });
+    });
 }
 
 // Count Up Animations

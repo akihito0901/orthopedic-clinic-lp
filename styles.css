@@ -162,6 +162,14 @@ body {
     font-weight: 900;
     margin-bottom: 20px;
     line-height: 1.2;
+    transform: none;
+    animation: none;
+}
+
+.hero-title.typing-text {
+    opacity: 1;
+    transform: translateY(0);
+    animation-fill-mode: forwards;
 }
 
 .hero-subtitle {
