@@ -193,6 +193,10 @@ body {
     line-height: 1.3;
 }
 
+.section-4 .section-title {
+    font-size: 1.6rem;
+}
+
 .hero-subtitle,
 .problem-text,
 .solution-text,
