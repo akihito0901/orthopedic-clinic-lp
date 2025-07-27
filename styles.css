@@ -861,6 +861,34 @@ body {
     box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
 }
 
+/* Mobile specific fixes for section 4 and CTA */
+@media (max-width: 768px) {
+    .section-4 {
+        min-height: 120vh;
+        padding: 30px 0 80px 0;
+    }
+    
+    .section-4 .container {
+        padding-bottom: 60px;
+    }
+    
+    .strategy-grid {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .mid-cta-simple {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        padding: 30px 20px;
+    }
+    
+    .mid-cta-button {
+        padding: 18px 25px;
+        font-size: 0.95rem;
+    }
+}
+
 .success-video {
     flex: 1;
 }
