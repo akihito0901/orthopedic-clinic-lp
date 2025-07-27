@@ -269,6 +269,78 @@ body {
     50% { transform: scale(1.05); }
 }
 
+/* CTA Focused Design */
+.cta-focused-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: 40px 20px;
+}
+
+.cta-message {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+}
+
+.cta-urgency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.early-cta-button-large {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: 20px 45px;
+    border-radius: 60px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+}
+
+.early-cta-button-large:hover {
+    background: linear-gradient(45deg, #c0392b, #a93226);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(231, 76, 60, 0.6);
+}
+
+.cta-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Mobile optimization for CTA */
+@media (max-width: 768px) {
+    .cta-message {
+        padding: 30px 25px;
+        margin: 0 20px;
+    }
+    
+    .cta-urgency {
+        font-size: 1.2rem;
+    }
+    
+    .early-cta-button-large {
+        font-size: 1.1rem;
+        padding: 18px 35px;
+    }
+}
+
 /* Video Optimization */
 .bg-video {
     object-fit: cover;
