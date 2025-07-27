@@ -269,6 +269,24 @@ body {
     50% { transform: scale(1.05); }
 }
 
+@keyframes midCtaPulse {
+    0%, 100% { 
+        transform: scale(1);
+    }
+    50% { 
+        transform: scale(1.08);
+    }
+}
+
+@keyframes midCtaGlow {
+    0% {
+        box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4), 0 0 20px rgba(243, 156, 18, 0.2);
+    }
+    100% {
+        box-shadow: 0 12px 30px rgba(243, 156, 18, 0.6), 0 0 40px rgba(243, 156, 18, 0.4);
+    }
+}
+
 /* CTA Focused Design */
 .cta-focused-container {
     display: flex;
@@ -853,12 +871,15 @@ body {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
+    animation: midCtaPulse 2s infinite, midCtaGlow 3s ease-in-out infinite alternate;
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
 }
 
 .mid-cta-button:hover {
     background: linear-gradient(45deg, #e67e22, #d35400);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(243, 156, 18, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(243, 156, 18, 0.7), 0 0 50px rgba(243, 156, 18, 0.5);
+    animation-play-state: paused;
 }
 
 /* Mobile specific fixes for section 4 and CTA */
