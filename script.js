@@ -200,10 +200,20 @@ function initializeTypingEffect() {
 function initializeVideoPlayback() {
     const videos = document.querySelectorAll('.bg-video');
     videos.forEach(video => {
+        // Handle loading success
         video.addEventListener('loadeddata', () => {
             video.play().catch(e => {
                 console.log('Video autoplay prevented:', e);
+                // Show poster image if autoplay fails
+                video.style.display = 'block';
             });
+        });
+        
+        // Handle loading errors
+        video.addEventListener('error', (e) => {
+            console.log('Video loading error:', e);
+            // Hide video and show background image
+            video.style.display = 'none';
         });
         
         // Ensure loop continues
@@ -212,10 +222,16 @@ function initializeVideoPlayback() {
             video.play();
         });
         
-        // Force play attempt
-        video.play().catch(e => {
-            console.log('Video autoplay prevented:', e);
-        });
+        // Force play attempt with better error handling
+        setTimeout(() => {
+            video.play().catch(e => {
+                console.log('Video autoplay prevented:', e);
+                // Fallback: ensure poster is visible
+                if (video.poster) {
+                    video.load(); // This will show the poster
+                }
+            });
+        }, 100);
     });
 }
 
