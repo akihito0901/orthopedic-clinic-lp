@@ -158,7 +158,7 @@ body {
 
 /* Typography */
 .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.0rem;
     font-weight: 900;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -383,7 +383,7 @@ body {
 
 .section-2 {
     position: relative;
-    background: #000;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
     color: white;
     overflow: hidden;
 }
@@ -470,7 +470,7 @@ body {
 
 .section-5 {
     position: relative;
-    background: #000;
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
     color: white;
     overflow: hidden;
 }
@@ -502,8 +502,35 @@ body {
 }
 
 .section-6 {
+    position: relative;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    color: #2c3e50;
+    color: white;
+}
+
+.section-6 .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.section-6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.section-6 .container {
+    position: relative;
+    z-index: 2;
 }
 
 .section-7 {
