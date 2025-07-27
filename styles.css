@@ -282,8 +282,17 @@ body {
     object-fit: cover;
 }
 
-/* Show fallback image on slow connections or mobile */
-@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+/* Optimize video performance on mobile */
+@media (max-width: 768px) {
+    .bg-video {
+        /* Keep video enabled on mobile but optimize */
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Only hide videos if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
     .bg-video {
         display: none;
     }

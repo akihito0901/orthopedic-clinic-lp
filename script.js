@@ -199,7 +199,15 @@ function initializeTypingEffect() {
 // Video Playback Initialization
 function initializeVideoPlayback() {
     const videos = document.querySelectorAll('.bg-video');
+    const isMobile = window.innerWidth <= 768;
+    
     videos.forEach(video => {
+        // Mobile optimization: lower quality settings
+        if (isMobile) {
+            video.preload = 'metadata';
+            video.muted = true;
+        }
+        
         // Handle loading success
         video.addEventListener('loadeddata', () => {
             video.play().catch(e => {
@@ -212,8 +220,10 @@ function initializeVideoPlayback() {
         // Handle loading errors
         video.addEventListener('error', (e) => {
             console.log('Video loading error:', e);
-            // Hide video and show background image
-            video.style.display = 'none';
+            // On error, ensure poster is visible
+            if (video.poster) {
+                video.load();
+            }
         });
         
         // Ensure loop continues
@@ -231,7 +241,7 @@ function initializeVideoPlayback() {
                     video.load(); // This will show the poster
                 }
             });
-        }, 100);
+        }, isMobile ? 500 : 100); // Longer delay on mobile
     });
 }
 
