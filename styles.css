@@ -466,13 +466,13 @@ body {
 .section-4 {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
-    min-height: 140vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
 .section-4 .container {
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -665,11 +665,11 @@ body {
 
 .strategy-item {
     background: rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
+    padding: 25px 20px;
     border-radius: 15px;
     text-align: center;
     backdrop-filter: blur(10px);
-    min-height: 200px;
+    min-height: 140px;
 }
 
 .strategy-icon {
@@ -839,9 +839,9 @@ body {
 /* Mid CTA Styles */
 .mid-cta-simple {
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 40px;
-    padding: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 0;
 }
 
 .mid-cta-button {
@@ -864,38 +864,43 @@ body {
 /* Mobile specific fixes for section 4 and CTA */
 @media (max-width: 768px) {
     .section-4 {
-        min-height: 150vh !important;
+        min-height: 100vh !important;
         height: auto !important;
-        padding: 40px 0 120px 0 !important;
+        padding: 30px 0 60px 0 !important;
         overflow: visible !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
     }
     
     .section-4 .container {
-        padding-bottom: 100px !important;
-        margin-bottom: 40px !important;
+        padding-bottom: 30px !important;
+        margin-bottom: 0px !important;
     }
     
     .strategy-grid {
-        gap: 15px;
-        margin-bottom: 40px !important;
+        gap: 12px;
+        margin-bottom: 20px !important;
+    }
+    
+    .strategy-item {
+        padding: 15px 12px !important;
+        min-height: 100px !important;
     }
     
     .mid-cta-simple {
-        margin-top: 30px !important;
-        margin-bottom: 80px !important;
-        padding: 40px 20px !important;
+        margin-top: 15px !important;
+        margin-bottom: 30px !important;
+        padding: 20px 15px !important;
         position: relative !important;
         z-index: 10 !important;
     }
     
     .mid-cta-button {
-        padding: 20px 30px !important;
-        font-size: 1rem !important;
-        width: 90% !important;
-        max-width: 300px !important;
+        padding: 15px 25px !important;
+        font-size: 0.95rem !important;
+        width: 80% !important;
+        max-width: 280px !important;
     }
 }
 
